@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F76127FB-B4B4-4F87-89B5-034A4B72C032}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>B2C_Funds_Transfer_Csharp</RootNamespace>
+    <AssemblyName>B2C-Funds-Transfer-Csharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\..\interswitch_csharp\Interswitch\bin\Debug\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Interswitch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Interswitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\interswitch_csharp\Interswitch\bin\Debug\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\..\interswitch_csharp\Interswitch\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Portable, Version=2.4.0.0, Culture=neutral, PublicKeyToken=be81bb0f53eab22f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\RestSharp.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="api\Validator.cs" />
+    <Compile Include="codec\AccountReceivable.cs" />
+    <Compile Include="codec\AccountValidation.cs" />
+    <Compile Include="codec\Bank.cs" />
+    <Compile Include="codec\BankResponse.cs" />
+    <Compile Include="codec\Beneficiary.cs" />
+    <Compile Include="codec\ErrorResponse.cs" />
+    <Compile Include="codec\Initiation.cs" />
+    <Compile Include="codec\Sender.cs" />
+    <Compile Include="codec\Termination.cs" />
+    <Compile Include="codec\TransferResponse.cs" />
+    <Compile Include="exceptions\InvalidRequestException.cs" />
+    <Compile Include="exceptions\MissingFieldException.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="transfer\Constants.cs" />
+    <Compile Include="transfer\FetchBanks.cs" />
+    <Compile Include="transfer\FundTransfer.cs" />
+    <Compile Include="transfer\Transfer.cs" />
+    <Compile Include="transfer\TransferRequest.cs" />
+    <Compile Include="transfer\TransferRequestBuilder.cs" />
+    <Compile Include="utility\Utility.cs" />
+    <Compile Include="validation\FundTransferValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="api\impl\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\B2C-Funds-Transfer-Csharp.dll" />
+    <Content Include="bin\Debug\B2C-Funds-Transfer-Csharp.pdb" />
+    <Content Include="Dependencies\Interswitch.dll" />
+    <Content Include="Dependencies\Newtonsoft.Json.dll" />
+    <Content Include="Dependencies\RestSharp.Portable.dll" />
+    <Content Include="Dependencies\System.Net.Http.Extensions.dll" />
+    <Content Include="Dependencies\System.Net.Http.Primitives.dll" />
+    <Content Include="obj\Debug\B2C-Funds-Transfer-Csharp.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\B2C-Funds-Transfer-Csharp.dll" />
+    <Content Include="obj\Debug\B2C-Funds-Transfer-Csharp.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\B2C-Funds-Transfer-Csharp.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
