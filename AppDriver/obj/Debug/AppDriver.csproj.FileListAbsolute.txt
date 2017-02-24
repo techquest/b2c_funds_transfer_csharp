@@ -15,3 +15,6 @@ C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\SampleApp\bin\Debug\Micro
 C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\SampleApp\obj\Debug\AppDriver.csprojResolveAssemblyReference.cache
 C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\SampleApp\obj\Debug\SampleApp.exe
 C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\SampleApp\obj\Debug\SampleApp.pdb
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\SampleApp.exe.config
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\obj\Debug\SampleApp.exe
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\obj\Debug\SampleApp.pdb
