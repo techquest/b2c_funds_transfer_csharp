@@ -17,14 +17,14 @@ namespace B2C_Funds_Transfer_Csharp.utility
         public static String generateMAC(TransferRequest t) {
 
 
-        Initiation inn = t.getInitiation();
-        Termination tm = t.getTermination();
-        String init = (inn.getAmount()
-        +inn.getCurrencyCode()
-        +inn.getPaymentMethodCode()+tm.getTerminationAmount()
-        +tm.getTerminationCurrencyCode()
-        +tm.getTerminationPaymentMethodCode()
-        +tm.getTerminationCountryCode());
+        Initiation inn = t.initiation;
+        Termination tm = t.termination;
+        String init = (inn.amount
+        +inn.currencyCode
+        +inn.paymentMethodCode+tm.amount
+        +tm.currencyCode
+        +tm.paymentMethodCode
+        +tm.countryCode);
 
             //MessageDigest md = MessageDigest.getInstance("SHA-512");
             //byte[] b = init.getBytes("UTF-8");

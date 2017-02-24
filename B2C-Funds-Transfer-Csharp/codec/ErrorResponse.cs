@@ -8,50 +8,18 @@ namespace B2C_Funds_Transfer_Csharp.codec
 {
     public class ErrorResponse
     {
-        private String code;
-        private String message;
+        
 
-        public string Code
+        public string code
         {
-            get
-            {
-                return code;
-            }
-
-            set
-            {
-                code = value;
-            }
+            set;get;
         }
 
-        public string Message
+        public string message
         {
-            get
-            {
-                return message;
-            }
-
-            set
-            {
-                message = value;
-            }
+            set;get;
         }
 
-        public String getCode()
-        {
-            return Code;
-        }
-        public void setCode(String code)
-        {
-            this.Code = code;
-        }
-        public String getMessage()
-        {
-            return Message;
-        }
-        public void setMessage(String message)
-        {
-            this.Message = message;
-        }
+        
     }
 }

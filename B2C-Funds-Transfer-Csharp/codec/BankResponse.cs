@@ -8,77 +8,23 @@ namespace B2C_Funds_Transfer_Csharp.codec
 {
     public class BankResponse
     {
-        private Bank[] banks;
-        private ErrorResponse error;
-        private ErrorResponse[] errors;
+        
 
-        public Bank[] Banks
+        public Bank[] banks
         {
-            get
-            {
-                return banks;
-            }
-
-            set
-            {
-                banks = value;
-            }
+            set;get;
         }
 
-        public ErrorResponse Error
+        public ErrorResponse error
         {
-            get
-            {
-                return error;
-            }
-
-            set
-            {
-                error = value;
-            }
+            set;get;
         }
 
-        public ErrorResponse[] Errors
+        public ErrorResponse[] errors
         {
-            get
-            {
-                return errors;
-            }
-
-            set
-            {
-                errors = value;
-            }
+            set;get;
         }
 
-        public ErrorResponse getError()
-        {
-            return Error;
-        }
-
-        public void setError(ErrorResponse error)
-        {
-            this.Error = error;
-        }
-
-        public ErrorResponse[] getErrors()
-        {
-            return Errors;
-        }
-
-        public void setErrors(ErrorResponse[] errors)
-        {
-            this.Errors = errors;
-        }
-
-        public Bank[] getBanks()
-        {
-            return banks;
-        }
-
-        public void setBanks(Bank[] banks)
-        {
-            this.banks = banks;
-        }
+        
     }
 }

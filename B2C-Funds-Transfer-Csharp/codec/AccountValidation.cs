@@ -14,41 +14,22 @@ namespace B2C_Funds_Transfer_Csharp.codec
         }
 
 
-
-        public String getAccountName()
+        public string accountName
         {
-            return accountName;
+            get;set;
         }
 
-        public void setAccountName(String accountName)
+        public ErrorResponse error
         {
-            this.accountName = accountName;
+            set;get;
         }
 
-        private String accountName;
+       
 
-        private ErrorResponse error;
-
-        public ErrorResponse getError()
+        public ErrorResponse[] errors
         {
-            return error;
+            set;get;
         }
 
-        public void setError(ErrorResponse error)
-        {
-            this.error = error;
-        }
-
-        public ErrorResponse[] getErrors()
-        {
-            return errors;
-        }
-
-        public void setErrors(ErrorResponse[] errors)
-        {
-            this.errors = errors;
-        }
-
-        private ErrorResponse[] errors;
     }
 }

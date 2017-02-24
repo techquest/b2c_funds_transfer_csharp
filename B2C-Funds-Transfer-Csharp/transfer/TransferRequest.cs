@@ -7,230 +7,63 @@ using System.Threading.Tasks;
 
 namespace B2C_Funds_Transfer_Csharp.transfer
 {
-    public class TransferRequest : Transfer
+    public class TransferRequest
     {
 
         public TransferRequest()
         {
         }
 
-        private Sender sender;
-        private Beneficiary beneficiary;
+        //private Sender sender
 
-        private Initiation initiation;
-        private Termination termination;
-
-        private String mac;
-        private String surcharge;
-
-        private String initiatingEntityCode;
-
-        private String transferCode;
-
-        private String accountNumber;
-        private String bankCode;
-
-        public Sender Sender
+        public Sender sender
         {
-            get
-            {
-                return sender;
-            }
-
-            set
-            {
-                sender = value;
-            }
+            set; get;
         }
 
-        public Beneficiary Beneficiary
+        public Beneficiary beneficiary
         {
-            get
-            {
-                return beneficiary;
-            }
-
-            set
-            {
-                beneficiary = value;
-            }
+            set; get;
         }
 
-        public Initiation Initiation
+        public Initiation initiation
         {
-            get
-            {
-                return initiation;
-            }
-
-            set
-            {
-                initiation = value;
-            }
+            set; get;
         }
 
-        public Termination Termination
+        public Termination termination
         {
-            get
-            {
-                return termination;
-            }
-
-            set
-            {
-                termination = value;
-            }
+            set; get;
         }
 
-        public string Mac
+        public string mac
         {
-            get
-            {
-                return mac;
-            }
-
-            set
-            {
-                mac = value;
-            }
+            set; get;
         }
 
-        public string Surcharge
+        public string surcharge
         {
-            get
-            {
-                return surcharge;
-            }
-
-            set
-            {
-                surcharge = value;
-            }
+            set; get;
         }
 
-        public string InitiatingEntityCode
+        public string initiatingEntityCode
         {
-            get
-            {
-                return initiatingEntityCode;
-            }
-
-            set
-            {
-                initiatingEntityCode = value;
-            }
+            set; get;
         }
 
-        public string TransferCode
+        public string transferCode
         {
-            get
-            {
-                return transferCode;
-            }
-
-            set
-            {
-                transferCode = value;
-            }
+            set; get;
         }
 
-        public string AccountNumber
+        public string accountNumber
         {
-            get
-            {
-                return accountNumber;
-            }
-
-            set
-            {
-                accountNumber = value;
-            }
+            set; get;
         }
 
-        public string BankCode
+        public string bankCode
         {
-            get
-            {
-                return bankCode;
-            }
-
-            set
-            {
-                bankCode = value;
-            }
-        }
-
-        public String getAccountNumber()
-        {
-            return AccountNumber;
-        }
-
-        public void setAccountNumber(String accountNumber)
-        {
-            this.AccountNumber = accountNumber;
-        }
-
-        public String getBankCode()
-        {
-            return BankCode;
-        }
-
-        public void setBankCode(String bankCode)
-        {
-            this.BankCode = bankCode;
-        }
-
-
-
-        private TransferRequest(TransferRequestBuilder builder)
-        {
-            
-
-        }
-
-        public void setMac(String mac)
-        {
-            this.Mac = mac;
-        }
-
-        public Sender getSender()
-        {
-            return Sender;
-        }
-
-        public Beneficiary getBeneficiary()
-        {
-            return Beneficiary;
-        }
-
-        public Initiation getInitiation()
-        {
-            return Initiation;
-        }
-
-        public Termination getTermination()
-        {
-            return Termination;
-        }
-
-        public String getMac()
-        {
-            return Mac;
-        }
-
-        public String getSurcharge()
-        {
-            return Surcharge;
-        }
-
-        public String getInitiatingEntityCode()
-        {
-            return InitiatingEntityCode;
-        }
-
-        public String getTransferCode()
-        {
-            return TransferCode;
+            set; get;
         }
 
 

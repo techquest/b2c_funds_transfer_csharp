@@ -213,16 +213,17 @@ namespace B2C_Funds_Transfer_Csharp.transfer
 
             TransferRequestBuilder builder = this;
             //set all the property we want 
-            
-            this.transferRequest.Sender = new Sender(senderPhoneTmp, senderEmailTmp, senderLastNameTmp, senderOtherNamesTmp);
-            this.transferRequest.Beneficiary = new Beneficiary(builder.beneficiaryPhoneNumber, builder.beneficiaryEmail, builder.beneficiaryLastName, builder.beneficiaryOtherNames);
-            this.transferRequest.AccountNumber = terminationAccountNumberTmp;
-            this.transferRequest.BankCode = terminationEntityCodeTmp;
-            this.transferRequest.Surcharge = surcharge;
-            this.transferRequest.TransferCode = transferCode;
-            this.transferRequest.Termination = new Termination(amountTmp, terminationEntityCodeTmp,terminationCurrencyCodeTmp, terminationPaymentMethodCodeTmp, terminationCountryCodeTmp);
+            this.transferRequest.initiatingEntityCode = builder.initiatingEntityCode;
+            this.transferRequest.sender = new Sender(senderPhoneTmp, senderEmailTmp, senderLastNameTmp, senderOtherNamesTmp);
+            this.transferRequest.beneficiary = new Beneficiary(builder.beneficiaryPhoneNumber, builder.beneficiaryEmail, builder.beneficiaryLastName, builder.beneficiaryOtherNames);
+            this.transferRequest.accountNumber = terminationAccountNumberTmp;
+            this.transferRequest.bankCode = terminationEntityCodeTmp;
+            this.transferRequest.surcharge = surcharge;
+            this.transferRequest.transferCode = transferCode;
+            this.transferRequest.termination = new Termination(amountTmp, terminationEntityCodeTmp,terminationCurrencyCodeTmp, terminationPaymentMethodCodeTmp, terminationCountryCodeTmp);
             AccountReceivable tmpAccount = new AccountReceivable(terminationAccountNumberTmp, terminationAccountTypeTmp);
-            this.transferRequest.Initiation = new Initiation(amountTmp, initiatingEntityCode, initiatorPaymentMethodCode, initiatorChannel);
+            this.transferRequest.termination.accountReceivable = tmpAccount;
+            this.transferRequest.initiation = new Initiation(amountTmp, initiatorCurrencyCode, initiatorPaymentMethodCode, initiatorChannel);
    
             return this.transferRequest;
         }

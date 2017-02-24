@@ -9,13 +9,38 @@ namespace B2C_Funds_Transfer_Csharp.codec
     public class Termination
     {
 
-        private AccountReceivable accountReceivable;
+        
 
-        private String amount;
-        private String entityCode;
-        private String currencyCode;
-        private String paymentMethodCode;
-        private String countryCode;
+        public AccountReceivable accountReceivable
+        {
+            set;get;
+        }
+
+        public string amount
+        {
+            set;get;
+        }
+
+        public string entityCode
+        {
+            set;get;
+        }
+
+        public string currencyCode
+        {
+            set;get;
+        }
+
+        public string paymentMethodCode
+        {
+            set;get;
+        }
+
+        public string countryCode
+        {
+            set;get;
+        }
+
         public Termination(String amount, String entityCode, String currencyCode, String paymentMethodCode, String countryCode)
         {
             this.amount = amount;
@@ -24,54 +49,7 @@ namespace B2C_Funds_Transfer_Csharp.codec
             this.paymentMethodCode = paymentMethodCode;
             this.countryCode = countryCode;
         }
-        public AccountReceivable getAccountReceivable()
-        {
-            return accountReceivable;
-        }
-        public void setAccountReceivable(AccountReceivable accountReceivable)
-        {
-            this.accountReceivable = accountReceivable;
-        }
-        public String getTerminationAmount()
-        {
-            return amount;
-        }
-        public void setTerminationAmount(String terminationAmount)
-        {
-            this.amount = terminationAmount;
-        }
-        public String getTerminationEntityCode()
-        {
-            return entityCode;
-        }
-        public void setTerminationEntityCode(String terminationEntityCode)
-        {
-            this.entityCode = terminationEntityCode;
-        }
-        public String getTerminationCurrencyCode()
-        {
-            return currencyCode;
-        }
-        public void setTerminationCurrencyCode(String terminationCurrencyCode)
-        {
-            this.currencyCode = terminationCurrencyCode;
-        }
-        public String getTerminationPaymentMethodCode()
-        {
-            return paymentMethodCode;
-        }
-        public void setTerminationPaymentMethodCode(String terminationPaymentMethodCode)
-        {
-            this.paymentMethodCode = terminationPaymentMethodCode;
-        }
-        public String getTerminationCountryCode()
-        {
-            return countryCode;
-        }
-        public void setTerminationCountryCode(String terminationCountryCode)
-        {
-            this.countryCode = terminationCountryCode;
-        }
+        
     }
 
 }

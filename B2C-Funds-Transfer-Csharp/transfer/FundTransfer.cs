@@ -47,11 +47,11 @@ namespace B2C_Funds_Transfer_Csharp.transfer
 
         public AccountValidation validateAccount(TransferRequest request) {
 
-            String bankCode = request.getBankCode();
+            String bankCode = request.bankCode;
             Dictionary<string, string> extra = new Dictionary<string, string>();
-            String accountNumber = request.getAccountNumber();
-            String url = Constants.ACCOUNT_VALIDATION_URL_PREFIX + bankCode + "/" + Constants.ACCOUNT_VALIDATION_URL_SUFFIX + accountNumber;
-            Dictionary<string, string> response = interswitch.Send(url, Constants.GET, "", extra);
+            String accountNumber = request.accountNumber;
+            String url = Constants.ACCOUNT_VALIDATION_URL_PREFIX + bankCode + "/" + Constants.ACCOUNT_VALIDATION_URL_SUFFIX + accountNumber + "/names";
+            Dictionary<string, string> response = interswitch.Send(url, Constants.GET);
             String responseCode;
             response.TryGetValue(Interswitch.Interswitch.HTTP_CODE, out responseCode);
             String msg;
@@ -64,7 +64,30 @@ namespace B2C_Funds_Transfer_Csharp.transfer
 
             String mac = Utility.generateMAC(tr);
 
-            return null;
+            if (mac != null) {
+                mac = mac.Replace("-", string.Empty);
+            }
+
+            tr.mac = mac;
+
+            var settings = new JsonSerializerSettings();
+
+            settings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
+
+            String json = JsonConvert.SerializeObject(tr, settings);
+
+            tr = Newtonsoft.Json.JsonConvert.DeserializeObject<TransferRequest>(json, settings);
+
+            //Console.WriteLine(json);
+
+            Dictionary <string, string> response = interswitch.Send(Constants.TRANSFER_RESOURCE_URL, Constants.POST, tr);
+            String responseCode;
+            response.TryGetValue(Interswitch.Interswitch.HTTP_CODE, out responseCode);
+            String msg;
+            response.TryGetValue(Interswitch.Interswitch.HTTP_RESPONSE, out msg);
+
+            return JsonConvert.DeserializeObject<TransferResponse>(msg);
+
         }
     }
 }

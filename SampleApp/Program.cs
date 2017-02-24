@@ -22,16 +22,16 @@ namespace SampleApp
             {
                 BankResponse bankResponse = transfer.fetchBanks();
 
-                Bank[] bank = bankResponse.getBanks(); // a bank array of all banks
+                Bank[] bank = bankResponse.banks; // a bank array of all banks
 
                 if (bank != null)
                 {
                     // successful
                     Bank testBank = bank[0]; // bank at index 0
 
-                    String cbnCode = testBank.getCbnCode(); // Central bank code
-                    String bankName = testBank.getBankName(); // bank name:
-                    String bankCode = testBank.getBankCode(); // bankcode in alphabetical form: UBA, GTB, FBN
+                    String cbnCode = testBank.cbnCode; // Central bank code
+                    String bankName = testBank.bankName; // bank name:
+                    String bankCode = testBank.bankCode; // bankcode in alphabetical form: UBA, GTB, FBN
 
                     TransferRequest request = new TransferRequestBuilder(initiatingEntityCode).begin()
                         .senderPhoneNumber("07036913492") // optional
@@ -45,9 +45,9 @@ namespace SampleApp
                         .amount("100000") // mandatory, minor denomination
                         .channel(FundTransfer.LOCATION) // mandatory: ATM-1, POS-2, WEB-3, MOBILE-4, KIOSK-5, PCPOS-6, LOCATION-7, DIRECT DEBIT-8
                         .destinationBankCode(cbnCode)/* mandatory:  To be gotten from the get all banks code*/
-                        .toAccountNumber("0114951936") // mandatory
+                        .toAccountNumber("4114951936") // mandatory
                         .fee("10000")// optional
-                        .requestRef("60360575603527")// mandatory
+                        .requestRef("30360575603526")// mandatory and unique for each transaction
                         .build();
 
                     AccountValidation validationResponse = transfer.validateAccount(request);// validate account
@@ -55,25 +55,25 @@ namespace SampleApp
                     if (validationResponse is AccountValidation)
                     {
 
-                        String accountName = validationResponse.getAccountName();
+                        String accountName = validationResponse.accountName;
                     }
 
                     TransferResponse response = transfer.send(request); // send transfer request
 
-                    if (response.getError() is ErrorResponse)
+                    if (response.error is ErrorResponse)
                     {
                         // NOT SUCCESSFUL
-                        String code = response.getError().getCode();
-                        String message = response.getError().getMessage();
+                        String code = response.error.code;
+                        String message = response.error.message;
 
                     }
-                    else if (response.getResponseCode().Equals("90000"))
+                    else if (response.responseCode.Equals("90000"))
                     {
 
                         // SUCCESS
-                        String mac = response.getMac();
-                        String transactionDate = response.getTransactionDate();
-                        String responseCode = response.getResponseCode();
+                        String mac = response.mac;
+                        String transactionDate = response.transactionDate;
+                        String responseCode = response.responseCode;
 
                     }
                     else

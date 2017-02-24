@@ -9,10 +9,27 @@ namespace B2C_Funds_Transfer_Csharp.codec
     public class Sender
     {
 
-        private String phone;
-        private String email;
-        private String lastname;
-        private String othernames;
+        
+
+        public string phone
+        {
+            set;get;
+        }
+
+        public string email
+        {
+            set;get;
+        }
+
+        public string lastname
+        {
+            set;get;
+        }
+
+        public string othernames
+        {
+            set;get;
+        }
 
         public Sender(String phone, String email, String lastname, String othernames)
         {
@@ -26,38 +43,7 @@ namespace B2C_Funds_Transfer_Csharp.codec
         {
         }
 
-        public String getPhone()
-        {
-            return phone;
-        }
-        public void setPhone(String phone)
-        {
-            this.phone = phone;
-        }
-        public String getEmail()
-        {
-            return email;
-        }
-        public void setEmail(String email)
-        {
-            this.email = email;
-        }
-        public String getLastName()
-        {
-            return lastname;
-        }
-        public void setLastName(String lastName)
-        {
-            this.lastname = lastName;
-        }
-        public String getOtherNames()
-        {
-            return othernames;
-        }
-        public void setOtherNames(String otherNames)
-        {
-            this.othernames = otherNames;
-        }
+        
     }
 
 }
