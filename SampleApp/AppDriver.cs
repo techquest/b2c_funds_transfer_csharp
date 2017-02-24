@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SampleApp
 {
-    class Program
+    class AppDriver
     {
 
         static void Main(string[] args)
