@@ -18,3 +18,17 @@ C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\SampleApp\obj\Debug\Sampl
 C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\SampleApp.exe.config
 C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\obj\Debug\SampleApp.exe
 C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\obj\Debug\SampleApp.pdb
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\SampleApp.exe
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\SampleApp.pdb
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\B2C-Funds-Transfer-Csharp.dll
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\Interswitch.dll
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\RestSharp.Portable.dll
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\B2C-Funds-Transfer-Csharp.pdb
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\ugochukwu.okeke\dev\B2C-Funds-Transfer-Csharp\AppDriver\obj\Debug\AppDriver.csprojResolveAssemblyReference.cache
