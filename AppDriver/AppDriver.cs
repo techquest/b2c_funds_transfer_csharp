@@ -13,10 +13,16 @@ namespace SampleApp
 
         static void Main(string[] args)
         {
-            String initiatingEntityCode = "PBL";
-            String clientId = "IKIA2EFBE1EF63D1BBE2AF6E59100B98E1D3043F477A";
-            String clientSecret = "uAk0Amg6NQwQPcnb9BTJzxvMS6Vz22octQglQ1rfrMA=";
-            FundTransfer transfer = new FundTransfer(clientId, clientSecret, Interswitch.Interswitch.DEV);
+           String initiatingEntityCode = "PBL";
+
+          //test clientID and clientSecret
+         //String clientId = "IKIA2EFBE1EF63D1BBE2AF6E59100B98E1D3043F477A";
+         //String clientSecret = "uAk0Amg6NQwQPcnb9BTJzxvMS6Vz22octQglQ1rfrMA=";
+
+        // sandbox clientId and clientSecret
+        String clientId = "IKIA6570778A3484D6F33BC7E4165ADCA6CF06B2860A";
+        String clientSecret = "DXfUwpuIvMAKN84kv38uspqGOsStgFS0oZMjU7bPwpU=";
+        FundsTransfer transfer = new FundsTransfer(clientId, clientSecret, Interswitch.Interswitch.SANDBOX);
 
             try
             {
@@ -34,6 +40,11 @@ namespace SampleApp
                     String bankCode = testBank.bankCode; // bankcode in alphabetical form: UBA, GTB, FBN
 
                     TransferRequest request = new TransferRequestBuilder(initiatingEntityCode).begin()
+                        .amount("100000") // mandatory, minor denomination
+                        .channel(FundsTransfer.LOCATION) // mandatory: ATM-1, POS-2, WEB-3, MOBILE-4, KIOSK-5, PCPOS-6, LOCATION-7, DIRECT DEBIT-8
+                        .destinationBankCode(cbnCode)/* mandatory:  To be gotten from the get all banks code (transfer.fetchBanks())*/
+                        .toAccountNumber("0114951936") // mandatory
+                        .requestRef("60360575603527")// mandatory
                         .senderPhoneNumber("07036913492") // optional
                         .senderEmail("grandeur_man@yahoo.com") // optional
                         .senderLastName("Desmond") // optional
@@ -42,12 +53,7 @@ namespace SampleApp
                         .receiverEmail("grandeur_man@yahoo.com") // optional
                         .receiverLastName("Desmond") // optional
                         .receiverOtherNames("Samuel") // optional
-                        .amount("100000") // mandatory, minor denomination
-                        .channel(FundTransfer.LOCATION) // mandatory: ATM-1, POS-2, WEB-3, MOBILE-4, KIOSK-5, PCPOS-6, LOCATION-7, DIRECT DEBIT-8
-                        .destinationBankCode(cbnCode)/* mandatory:  To be gotten from the get all banks code*/
-                        .toAccountNumber("4114951936") // mandatory
-                        .fee("10000")// optional
-                        .requestRef("30360575603526")// mandatory and unique for each transaction
+                        .fee("10000")// optional (minor denomination)
                         .build();
 
                     AccountValidation validationResponse = transfer.validateAccount(request);// validate account
