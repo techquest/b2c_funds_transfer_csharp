@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace B2C_Funds_Transfer_Csharp.transfer
 {
-    public class FundTransfer : Transfer
+    public class FundsTransfer : Transfer
     {
         private string clientId;
         private string clientSecret;
@@ -26,12 +26,15 @@ namespace B2C_Funds_Transfer_Csharp.transfer
         public static string HTTP_CODE = "CODE";
         public static string HTTP_RESPONSE = "RESPONSE";
 
-        public FundTransfer(string clientId, string clientSecret, string env) {
+        public FundsTransfer(string clientId, string clientSecret, string env=null) {
             this.clientId = clientId;
             this.clientSecret = clientSecret;
             this.environment = env;
+            if (env == null) env = "SANDBOX";
             interswitch = new Interswitch.Interswitch(clientId, clientSecret, env);
         }
+
+        
 
         public BankResponse fetchBanks() {
             Dictionary<string, string> extra = new Dictionary<string, string>();
