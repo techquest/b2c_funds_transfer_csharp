@@ -8,6 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/**
+ * 
+ * sample code to showcase all the request in transfer service.
+ * 
+ * For any difficulty, contact any of the contributors for help.
+ *
+ */
 namespace SampleApp
 {
     class AppDriver
@@ -15,16 +22,65 @@ namespace SampleApp
 
         static void Main(string[] args)
         {
-           String initiatingEntityCode = "PBL";
 
-          //test clientID and clientSecret
-         //String clientId = "IKIA2EFBE1EF63D1BBE2AF6E59100B98E1D3043F477A";
-         //String clientSecret = "uAk0Amg6NQwQPcnb9BTJzxvMS6Vz22octQglQ1rfrMA=";
+           /**
+          * Initiating entity code:
+          * This is unique to a each merchant.
+          * When you are ready to move to production,
+          * you will be provided with your initiatingEntityCode
+          */
+            String initiatingEntityCode = "XXT";
 
-        // sandbox clientId and clientSecret
-        String clientId = "IKIA6570778A3484D6F33BC7E4165ADCA6CF06B2860A";
-        String clientSecret = "DXfUwpuIvMAKN84kv38uspqGOsStgFS0oZMjU7bPwpU=";
-        FundsTransfer transfer = new FundsTransfer(clientId, clientSecret, Interswitch.Interswitch.SANDBOX);
+            /**
+           * @clientId:
+           * @clientSecret:
+           * These are for test environment.
+           * String clientId = "IKIA2EFBE1EF63D1BBE2AF6E59100B98E1D3043F477A";
+           * String clientSecret = "uAk0Amg6NQwQPcnb9BTJzxvMS6Vz22octQglQ1rfrMA=";
+           * FundTransfer transfer = new FundTransfer(clientId, clientSecret, Interswitch.ENV_DEV)
+           */       
+
+            /**
+             * @clientId:
+             * @clientSecret:
+             * These are for the sandbox environment.
+             */
+            String clientId = "IKIA6570778A3484D6F33BC7E4165ADCA6CF06B2860A";
+            String clientSecret = "DXfUwpuIvMAKN84kv38uspqGOsStgFS0oZMjU7bPwpU=";
+
+            /**
+             * Create a funds transfer object.
+             * e.g FundsTransfer transfer = new FundsTransfer(clientId, clientSecret, Interswitch.ENV_SANDBOX);
+             * 
+             * With this object you can
+             * 
+             * 1. Get all supported banks on our platform.
+             * 
+             * e.g BankResponse bankResponse = transfer.fetchBanks();
+             * 
+             * If successful, it returns a list of all banks. Otherwise it
+             * throws returns an error object or throws an exception.
+             * 
+             * 2. Account Validation
+             * 
+             * e.g AccountValidation validationResponse = transfer.validateAccount(request);// validate account
+             * 
+             * This is used to validate an account number against a source bank.
+             * If successful, you know for sure the bank account number is valid.
+             * Otherwise, it is probably okay to still go on with the transaction.
+             * 
+             * 3. Funds Transfer.
+             * 
+             * e.g TransferResponse response = transfer.send(request); // send transfer request
+             * 
+             * This api, is used to initiate a funds transfer from a sender to a receiver.
+             * The sample code is clear and concise and states the mandatory and optional fields.
+             * 
+             * 
+             * 
+             */
+
+            FundsTransfer transfer = new FundsTransfer(clientId, clientSecret, Interswitch.Interswitch.SANDBOX);
 
             try
             {
@@ -104,4 +160,5 @@ namespace SampleApp
         }
     }
 }
+
 ```
